@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" href="favi.png">
     <style>
-        body , div{
-            background-color: aqua;
+        body {
+            background-color:  #f0f8ff;
+            border-radius: 10px;
+            padding: 10px 5px;
+            margin: 10px 3px;
+        }
+         div{
+            background-color:  #f0f8ff;
             border-radius: 10px;
             padding: 5px;
-            margin: 5px;
+            margin: 3px;
         }
         div .side_bar{
-            background-color: aquamarine;
-            height: 100vh;
+            background-color: #d9ecff;
+            height: 100%;
             width: 20%;
             min-width: 200px;
-            position: fixed;
+            position: absolute;
             left: 0;
-            top: 0;
+            top: 100px;
             overflow-y: auto;
         }
-        li{
+        button,li{
             padding: 10px;
             margin: 10px;
             border: 2px solid black;
@@ -42,43 +49,65 @@
             font-weight: 1000;
         }
         div .mainPanel{
-            margin-left: 20%;
+            margin-left: 200px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 3px;
             padding: 3px;
+            background-color: #f0f8ff;
         }
         .uploads{
             display: flex;
-            border: 1px solid black;
+            border: 3px solid black;
             width: 500px; 
             height: 220px; 
         }
         .content{
-            border: 1px solid black;
             width: 400px; 
             padding: 3px;
+        }
+        .Header{
+            background-color: #cce6ff;
+            width: 100%;
+        }
+         button {
+            width: 150px;
+            height: 45px;
+        }
+         button a {
+            text-decoration: none;
+            color: black;
+        }
+        .newspaper {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+            padding: 2px;
+            background-color: #e6f2ff;
+            border-radius: 5px;
+            text-align: right;
         }
     </style>
 </head>
 <body style="text-align: center;">
+    <div class="Header"><H1>Online News Clippings Management System - DASHBOARD</H1></div>
     <div class="main">
-        <H1>DASHBOARD</H1>
         <div class="side_bar">
             <nav>
                     <img src="Admin.jpeg"></img>
                     <h1>ADMIN LOGIN</h1>
-                    <li>Controls</li>
-                    <li>Image Upload</li>
-                    <li>Image Management</li>
+                    <button><a href="#">Controls</a></button>
+                    <button><a href="AdminIU.html">Image Upload</a></button>
+                    <button><a href="#">Logout</a></button>
             </nav>
         </div>
         <div class="mainPanel">
             <div class="uploads">
                 <div>
                     <img src="img.png" alt="">
-                <li>🗑️Delete</li>
+                    <button><a href="#">Delete</a></button>
                 </div>
                 <div class="content">
                     <div class="title">Science Exhibition 2025</div>
@@ -86,12 +115,13 @@
                     <div class="Description">DBJ College organizes Science Exhibition 2025 </div>
                     <div class="tags">"Science", "Exhibition"</div>
                     <div class="datetime"> 2025-04-10</div>
+                    <div class="newspaper">The Times of India</div>
                 </div>
             </div>
             <div class="uploads">
                 <div>
                     <img src="img.png" alt="">
-                <li>🗑️Delete</li>
+                 <button><a href="#">Delete</a></button>
                 </div>
                 <div class="content">
                     <div class="title">New Scholarship Scheme</div>
@@ -99,12 +129,13 @@
                     <div class="Description">Maharashtra Government Launches New Scholarship Scheme</div>
                     <div class="tags">"Scholarship", "Education", "Maharashtra Govt", "Students"</div>
                     <div class="datetime">2025-04-08</div>
+                    <div class="newspaper">The Hindu</div>
                 </div>
             </div>
             <div class="uploads">
                 <div>
                     <img src="img.png" alt="">
-                <li>🗑️Delete</li>
+                 <button><a href="#">Delete</a></button>
                 </div>
                 <div class="content">
                     <div class="title">Blood Donation Camp</div>
@@ -112,12 +143,13 @@
                     <div class="Description">Blood doantion camp in dbj college</div>
                     <div class="tags">"Blood Donation", "Health"</div>
                     <div class="datetime">2025-04-05</div>
+                    <div class="newspaper">Indian Express</div>
                 </div>
             </div>
             <div class="uploads">
                 <div>
                     <img src="img.png" alt="">
-                <li>🗑️Delete</li>
+                 <button><a href="#">Delete</a></button>
                 </div>
                 <div class="content">
                     <div class="title">Science Exhibition 2025</div>
@@ -125,12 +157,13 @@
                     <div class="Description">DBJ College organizes Science Exhibition 2025 </div>
                     <div class="tags">"Science", "Exhibition"</div>
                     <div class="datetime"> 2025-04-10</div>
+                    <div class="newspaper">The Times of India</div>
                 </div>
             </div>
             <div class="uploads">
                 <div>
                     <img src="img.png" alt="">
-                <li>🗑️Delete</li>
+                 <button><a href="#">Delete</a></button>
                 </div>
                 <div class="content">
                     <div class="title">New Scholarship Scheme</div>
@@ -138,12 +171,13 @@
                     <div class="Description">Maharashtra Government Launches New Scholarship Scheme</div>
                     <div class="tags">"Scholarship", "Education", "Maharashtra Govt", "Students"</div>
                     <div class="datetime">2025-04-08</div>
+                    <div class="newspaper">Hindustan Times</div>
                 </div>
             </div>
             <div class="uploads">
                 <div>
                     <img src="img.png" alt="">
-                <li>🗑️Delete</li>
+                 <button><a href="#">Delete</a></button>
                 </div>
                 <div class="content">
                     <div class="title">Blood Donation Camp</div>
@@ -151,6 +185,7 @@
                     <div class="Description">Blood doantion camp in dbj college</div>
                     <div class="tags">"Blood Donation", "Health"</div>
                     <div class="datetime">2025-04-05</div>
+                    <div class="newspaper">Maharashtra Times</div>
                 </div>
             </div>
         </div>

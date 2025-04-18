@@ -3,138 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Dashboard</title>
+    <link rel="icon" href="favi.png">
     <style>
-        body , div{
-            background-color: aqua;
-            border-radius: 10px;
-            padding: 5px;
-            margin: 5px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        div .side_bar{
-            background-color: aquamarine;
+
+        body {
+            display: flex;
             height: 100vh;
-            width: 20%;
-            min-width: 200px;
-            position: fixed;
-            left: 0;
-            top: 0;
+        }
+
+        .sidebar {
+            background-image: url(p2.jpg);
+            background-size: cover;
+            width: 300px;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px;
+            border-right: 1px solid black;
+        }
+
+        .sidebar img {
+            width: 130px;
+            height: 130px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .sidebar button {
+            width: 100px;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 10px;
+            background: rgb(42, 81, 166);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .main {
+            flex: 1;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
             overflow-y: auto;
         }
-        li{
-            padding: 10px;
-            margin: 10px;
-            border: 2px solid black;
-            border-radius: 50px;
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        nav img{
-            padding: 10px;
-            margin: 50px 0 0;
-            border: 2px solid black;
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+            margin: 0 auto 15px;
         }
-        img {
-            height: 150px;
-            width: 150px;
-            border-radius: 50px;
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            text-align: center;
         }
-        h1{
-            font: 1.5em sans-serif;
-            font-weight: 1000;
+
+        .card p {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 10px;
         }
-        div .mainPanel{
-            margin-left: 20%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 3px;
-            padding: 3px;
-        }
-        .uploads{
-            display: flex;
-            border: 1px solid black;
-            width: 500px; 
-            height: 220px; 
-        }
-        .content{
-            border: 1px solid black;
-            width: 400px; 
-            padding: 3px;
+
+        .card small {
+            display: block;
+            text-align: center;
+            color: orange;
+            font-style: italic;
+            margin-top: 8px;
         }
     </style>
 </head>
-<body style="text-align: center;">
+<body>
+    <div class="sidebar">
+        <img src="user.jpeg" alt="User Logo">
+        <h2>USER LOGIN</h2>
+        <button>Controls</button>
+        <button>Image Upload</button>
+        <button>Image Management</button>
+    </div>
+
     <div class="main">
-        <H1>DASHBOARD</H1>
-        <div class="side_bar">
-            <nav>
-                    <img src="user.jpeg"></img>
-                    <h1>USER LOGIN</h1>
-                    <li>Controls</li>
-                    <li>Image Upload</li>
-                    <li>Image Management</li>
-            </nav>
+        <div class="card">
+            <img src="img.png" alt="News Image">
+            <h3>Science Exhibition 2025</h3>
+            <p><strong>Education</strong><br>DBJ College organizes Science Exhibition 2025</p>
+            <p>"Science", "Exhibition"</p>
+            <p>2025-04-10</p>
         </div>
-        <div class="mainPanel">
-            <div class="uploads">
-                <img src="img.png" alt="">
-                <div class="content">
-                    <div class="title">Science Exhibition 2025</div>
-                    <div class="category">Education</div>
-                    <div class="Description">DBJ College organizes Science Exhibition 2025 </div>
-                    <div class="tags">"Science", "Exhibition"</div>
-                    <div class="datetime"> 2025-04-10</div>
-                </div>
-            </div>
-            <div class="uploads">
-                <img src="img.png" alt="">
-                <div class="content">
-                    <div class="title">New Scholarship Scheme</div>
-                    <div class="category">Government Schemes</div>
-                    <div class="Description">Maharashtra Government Launches New Scholarship Scheme</div>
-                    <div class="tags">"Scholarship", "Education", "Maharashtra Govt", "Students"</div>
-                    <div class="datetime">2025-04-08</div>
-                </div>
-            </div>
-            <div class="uploads">
-                <img src="img.png" alt="">
-                <div class="content">
-                    <div class="title">Blood Donation Camp</div>
-                    <div class="category">Health</div>
-                    <div class="Description">Blood doantion camp in dbj college</div>
-                    <div class="tags">"Blood Donation", "Health"</div>
-                    <div class="datetime">2025-04-05</div>
-                </div>
-            </div>
-            <div class="uploads">
-                <img src="img.png" alt="">
-                <div class="content">
-                    <div class="title">Science Exhibition 2025</div>
-                    <div class="category">Education</div>
-                    <div class="Description">DBJ College organizes Science Exhibition 2025 </div>
-                    <div class="tags">"Science", "Exhibition"</div>
-                    <div class="datetime"> 2025-04-10</div>
-                </div>
-            </div>
-            <div class="uploads">
-                <img src="img.png" alt="">
-                <div class="content">
-                    <div class="title">New Scholarship Scheme</div>
-                    <div class="category">Government Schemes</div>
-                    <div class="Description">Maharashtra Government Launches New Scholarship Scheme</div>
-                    <div class="tags">"Scholarship", "Education", "Maharashtra Govt", "Students"</div>
-                    <div class="datetime">2025-04-08</div>
-                </div>
-            </div>
-            <div class="uploads">
-                <img src="img.png" alt="">
-                <div class="content">
-                    <div class="title">Blood Donation Camp</div>
-                    <div class="category">Health</div>
-                    <div class="Description">Blood doantion camp in dbj college</div>
-                    <div class="tags">"Blood Donation", "Health"</div>
-                    <div class="datetime">2025-04-05</div>
-                </div>
-            </div>
+
+        <div class="card">
+            <img src="img.png" alt="News Image">
+            <h3>New Scholarship Scheme</h3>
+            <p><strong>Government Schemes</strong><br>Maharashtra Government Launches New Scholarship Scheme</p>
+            <p>"Scholarship", "Education", "Maharashtra Govt", "Students"</p>
+            <p>2025-04-08</p>
+        </div>
+
+        <div class="card">
+            <img src="img.png" alt="News Image">
+            <h3>Blood Donation Camp</h3>
+            <p><strong>Health</strong><br>Blood donation camp in dbj college</p>
+            <p>"Blood Donation", "Health"</p>
+            <p>2025-04-05</p>
+        </div>
+
+        <div class="card">
+            <img src="img.png" alt="News Image">
+            <h3>Science Exhibition 2025</h3>
+            <p><strong>Education</strong><br>DBJ College organizes Science Exhibition 2025</p>
+            <p>"Science", "Exhibition"</p>
+            <p>2025-04-10</p>
+        </div>
+
+        <div class="card">
+            <img src="img.png" alt="News Image">
+            <h3>New Scholarship Scheme</h3>
+            <p><strong>Government Schemes</strong><br>Maharashtra Government Launches New Scholarship Scheme</p>
+            <p>"Scholarship", "Education", "Maharashtra Govt", "Students"</p>
+            <p>2025-04-08</p>
+        </div>
+
+        <div class="card">
+            <img src="img.png" alt="News Image">
+            <h3>Blood Donation Camp</h3>
+            <p><strong>Health</strong><br>Blood donation camp in dbj college</p>
+            <p>"Blood Donation", "Health"</p>
+            <p>2025-04-05</p>
         </div>
     </div>
 </body>

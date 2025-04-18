@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login | Online News Clippings System</title>
+    <link rel="stylesheet" href="user_reg.css">
+
+    <style>
+        body{
+            background-image: url(p4.jpg);
+        }
+
+        .container {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: whitesmoke;
+            margin-left: 30%;
+        }
+
+        .container-newsletter{
+            margin-bottom: 20px;
+        }
+
+        .container h2{
+            color: rgb(0, 136, 255);
+            padding-bottom: 20px;
+        }
+
+        .file-upload{
+            border: 1px dashed black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            /* background-color: rgb(106, 172, 203); */
+            margin-top: 10px;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .file-upload:hover {
+            /* background-color: #2587b8; */
+            color: black;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <!-- <div class="header">
+        <h1>Online News Clippings System</h1>
+    </div> -->
+
+    <form action="/" method="post">
+        <h2>Upload Newsletter Details</h2>
+
+        <div class="container-newsletter">
+            <label for="title">Newsletter Title:</label>
+            <input type="text" id="News_name" name="News_name" placeholder="Enter your newsletter title" required>
+        </div>
+
+        <div class="container-newsletter">
+            <label for="newspaper">Newspaper Name:</label>
+          <input type="text" id="newspaper" name="newspaper" placeholder="e.g. The Times of India" required>
+        </div>
+
+        <div class="container-newsletter">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="container-newsletter">
+             <label for="description">Description:</label>
+          <textarea id="description" name="description" rows="4" placeholder="Write a short description..." required></textarea>
+        </div>
+
+        <div class="container-newsletter">
+            <label for="image">Upload Image:</label>
+          <label class="file-upload">
+            <input type="file" id="image" name="image" required>
+            📁 Click to select image
+          </label>
+        </div>
+
+        <button type="submit" class="loginbtn">Submit Newsletter</button>
+    </form>
+</div>
+
+</body>
+</html>

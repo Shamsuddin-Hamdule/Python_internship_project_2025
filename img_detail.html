@@ -1,111 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login | Online News Clippings System</title>
-    <link rel="stylesheet" href="user_reg.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Login | Online News Clippings System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-image: url('./media/p4.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
 
-    <style>
-        body{
-            background-image: url(p4.jpg);
-        }
+    .file-upload {
+      border: 1px dashed black;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      color: black;
+      transition: 0.3s;
+    }
 
-        .container {
-            background-color: white;
-            padding: 50px;
-            border-radius: 10px;
-            max-width: 500px;
-            width: 100%;
-            box-shadow: whitesmoke;
-            margin-left: 30%;
-        }
+    .file-upload:hover {
+      background-color: #f8f9fa;
+    }
 
-        .container-newsletter{
-            margin-bottom: 20px;
-        }
+    input[type="file"] {
+      display: none;
+    }
 
-        .container h2{
-            color: rgb(0, 136, 255);
-            padding-bottom: 20px;
-        }
+    .card {
+      width: 100%;
+      max-width: 1200px;
+    }
 
-        .file-upload{
-            border: 1px dashed black;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            /* background-color: rgb(106, 172, 203); */
-            margin-top: 10px;
-            color: black;
-            transition: 0.3s;
-        }
-
-        .file-upload:hover {
-            /* background-color: #2587b8; */
-            color: black;
-        }
-
-        input[type="text"],
-        input[type="date"],
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid lightgray;
-            border-radius: 10px;
-            font-size: 12px;
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-
-    </style>
-
+    #preview {
+      max-height: 300px;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="card shadow p-4 bg-white rounded">
+    <form action="/" method="post" enctype="multipart/form-data">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h2 class="text-primary mb-4">Upload Newsletter Details</h2>
 
-<div class="container">
-    <!-- <div class="header">
-        <h1>Online News Clippings System</h1>
-    </div> -->
+          <div class="mb-3">
+            <label for="News_name" class="form-label">Newsletter Title:</label>
+            <input type="text" class="form-control" id="News_name" name="News_name" placeholder="Enter your newsletter title" required />
+          </div>
 
-    <form action="/" method="post">
-        <h2>Upload Newsletter Details</h2>
+          <div class="mb-3">
+            <label for="newspaper" class="form-label">Newspaper Name:</label>
+            <input type="text" class="form-control" id="newspaper" name="newspaper" placeholder="e.g. The Times of India" required />
+          </div>
 
-        <div class="container-newsletter">
-            <label for="title">Newsletter Title:</label>
-            <input type="text" id="News_name" name="News_name" placeholder="Enter your newsletter title" required>
+          <div class="mb-3">
+            <label for="date" class="form-label">Date:</label>
+            <input type="date" class="form-control" id="date" name="date" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" id="description" name="description" rows="4" placeholder="Write a short description..." required></textarea>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label">Upload Image:</label>
+            <label class="file-upload w-100">
+              <input type="file" id="image" name="image" required />
+              📁 Click to select image
+            </label>
+          </div>
         </div>
 
-        <div class="container-newsletter">
-            <label for="newspaper">Newspaper Name:</label>
-          <input type="text" id="newspaper" name="newspaper" placeholder="e.g. The Times of India" required>
-        </div>
+        <!-- Right Column -->
+        <div class="col-md-6">
+          <h2 class="text-primary mb-4">Additional Info</h2>
 
-        <div class="container-newsletter">
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-        </div>
+          <div class="mb-3">
+            <label for="tags" class="form-label">Tags:</label>
+            <input type="text" class="form-control" id="tags" name="tags" placeholder="e.g. politics, sports, economy" />
+          </div>
 
-        <div class="container-newsletter">
-             <label for="description">Description:</label>
-          <textarea id="description" name="description" rows="4" placeholder="Write a short description..." required></textarea>
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Image Preview:</label>
+            <div class="border rounded p-3 text-center bg-light">
+              <img id="preview" src="#" alt="Image Preview" class="img-fluid d-none" />
+              <small class="text-muted" id="no-image">No image selected</small>
+            </div>
+          </div>
 
-        <div class="container-newsletter">
-            <label for="image">Upload Image:</label>
-          <label class="file-upload">
-            <input type="file" id="image" name="image" required>
-            📁 Click to select image
-          </label>
+          <div class="mt-4">
+            <button type="submit" class="btn btn-primary w-100">Submit Newsletter</button>
+          </div>
         </div>
-
-        <button type="submit" class="loginbtn">Submit Newsletter</button>
+      </div>
     </form>
-</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
